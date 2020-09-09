@@ -1,0 +1,9 @@
+.owl-stage{
+    width: 3600px !important
+}
+.owl-item{
+    min-width: 300px;
+}
+.owl-stage-outer{
+    max-height: 400px;
+}

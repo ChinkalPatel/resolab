@@ -1,0 +1,24 @@
+.d1{
+    background: black;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+.d1 a{
+    color:white;
+}
+.d1 p {
+    color: white;
+    margin-bottom:0px;
+}
+.d1 hr {
+    color: white;
+}
+.r1 {
+    color: white;
+    padding-bottom: 2px;
+    margin-bottom: 0px;
+}
+ svg{
+    height: 1em;
+    width: 3em;
+}
