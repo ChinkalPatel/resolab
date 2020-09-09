@@ -4,7 +4,7 @@ import '../style/css/Loader.css';
 function LoadingElement(){
     return(
             <div className = "loaderdiv">
-                <br />
+                
                 <Loader
                 className = "loadersvg"
                 type="ThreeDots"

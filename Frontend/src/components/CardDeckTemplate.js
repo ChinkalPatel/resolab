@@ -82,20 +82,22 @@ class CardDeckTemplate extends Component {
 
         else if (this.props.cdType === "available") { 
         {/*Show 12 cards from available-resources data*/ }
-        var icount = 42;
+        var icount = 4;
         var nval = true;
-        var toutvar = 500;
+        var toutvar = 1000;
         var dval = true;
 
             var deck = Object.keys(this.state.cardsForProvider).map((pkey) => {
-                return (<CardTemplateForProvider cUser={this.state.cardsForProvider[pkey].user.user}
-                    cName={this.state.cardsForProvider[pkey].user.name}
-                    cPosition={this.state.cardsForProvider[pkey].user.name}
-                    cMoney={this.state.cardsForProvider[pkey].user.name}
-                    cLoc={this.state.cardsForProvider[pkey].user.name}
-                    cImg={this.state.cardsForProvider[pkey].user.name}
-                    key={this.state.cardsForProvider[pkey].user.name}
-                        />)
+                if (pkey < 8) {
+                    return (<CardTemplateForProvider cUser={this.state.cardsForProvider[pkey].user.user}
+                        cName={this.state.cardsForProvider[pkey].user.name}
+                        cPosition={this.state.cardsForProvider[pkey].user.name}
+                        cMoney={this.state.cardsForProvider[pkey].user.name}
+                        cLoc={this.state.cardsForProvider[pkey].current_work_district}
+                        cImg={this.state.cardsForProvider[pkey].user.name}
+                        key={this.state.cardsForProvider[pkey].user.name}
+                    />)
+                }
                  });
          }
 
@@ -103,20 +105,22 @@ class CardDeckTemplate extends Component {
         else if (this.props.cdType === "required") {
             var icount = 4;
             var nval = true;
-            var toutvar = 10000;
+            var toutvar = 1000;
             var dval = true;
             var deck = Object.keys(this.state.cardsForSeeker).map((skey) => {
-                return (<CardTemplateForSeeker
-                    cCategory={this.state.cardsForSeeker[skey].user.name}
-                    cSubCategory={this.state.cardsForSeeker[skey].user.name}
-                    cSalaryLower={this.state.cardsForSeeker[skey].user.name}
-                    cSalaryUpper={this.state.cardsForSeeker[skey].user.name}
-                    cPostedByVal={this.state.cardsForSeeker[skey].user.name}
-                    cImg={this.state.cardsForSeeker[skey].user.name}
-                    cLoc={this.state.cardsForSeeker[skey].user.name}
-                    key={this.state.cardsForSeeker[skey].user.name}
+                if (skey < 4) {
+                    return (<CardTemplateForSeeker
+                        cCategory={this.state.cardsForSeeker[skey].user.name}
+                        cSubCategory={this.state.cardsForSeeker[skey].user.name}
+                        cSalaryLower={this.state.cardsForSeeker[skey].user.name}
+                        cSalaryUpper={this.state.cardsForSeeker[skey].user.name}
+                        cPostedByVal={this.state.cardsForSeeker[skey].user.name}
+                        cImg={this.state.cardsForSeeker[skey].user.name}
+                        cLoc={this.state.cardsForSeeker[skey].user.name}
+                        key={this.state.cardsForSeeker[skey].user.name}
 
-                />)
+                    />)
+                }
             })
 
         } else if (this.props.cdType === "highlights") {
@@ -142,18 +146,18 @@ class CardDeckTemplate extends Component {
                 nav={false}
                 autoplayTimeout={toutvar}
                 autoplayHoverPause={dval}
-                loop
+                loop={true}
                 dots={false}
                 responsiveClass={true}
                 responsive={{
                     0: {
-                        items: 1,
+                        items: 2,
                     },
                     600: {
-                        items: 20,
+                        items: 2,
                     },
                     1000: {
-                        items: 40,
+                        items: icount,
                     }
                 }
                 }
